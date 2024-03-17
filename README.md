@@ -2,20 +2,26 @@
 
 ## Sequence Diagram
 ```mermaid
+
+
+
+
 sequenceDiagram
  autonumber
   participant   Patient
-  box Another
+  box Hospital
   participant   Lab-Staff
   participant   Pathologiest
   participant   Doctor
   end
+  title LabReport
+  
   Patient->>Lab-Staff: I need to do some diagnosis
 
   Lab-Staff->>Patient: Ok,Let me collect your diagnosis list s , pay the bill and a pathologist will collect sample to the lab
 
  Patient->>Pathologiest: Here is the diagnosis list and payment receipt 
-activate Pathologiest
+ activate Pathologiest
  Pathologiest->>Patient: Ok ,  Let me scan the barcode on the receipt and collect your samples in the lab, you will receive alink on your given mobile no to view the reports when ready 
 
  Pathologiest-->Doctor:Colleced the sample and report will automatically assign to the appropriated doctor
