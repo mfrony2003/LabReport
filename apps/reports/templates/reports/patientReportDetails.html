@@ -1,0 +1,87 @@
+<head>
+    <style>
+       table, th, td {
+    border: 1.5px  ;   
+       }
+       img {
+        float: right;
+}
+    </style>
+</head>
+
+
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    
+    <div>
+        <div>
+        <h2>Company Name</h2>
+    </div>
+    <div>
+        <h2>{{patientName}}</h2>
+        <h2>{{diagnosisName}} Report</h2>
+        <p> </p>
+    
+        <p>    <img src="{{barcode}}"></p>
+            
+    </div>
+    </div>
+ 
+ 
+
+    <!-- HTML Content -->
+    <table  style="width:100%">
+        <thead>
+            <tr>
+                <th>Investigation Name</th>
+                <th>Unit </th>
+                <th>Result </th>
+                <th>ReverenceRange</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% block patientReport %}
+
+            {% for item in patientReportDetails  %}
+            <tr style="text-align: center;">
+                <td>{{item.DiagnosisParameters.investigationName}}</td>
+                <td>{{item.DiagnosisParameters.Unit}}</td>
+                <td>{{item.Result}}</td>
+                <td>{{item.DiagnosisParameters.Reverence_Range}}</td>
+                
+                
+
+            </tr>
+            {% endfor %}
+           
+            {% endblock %}
+            
+        </tbody>
+        
+    </table>
+
+    <table style="width:10%">
+        <tbody>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th> </th>
+                    <th> </th>
+                    <th></th>
+    
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            <tr><td> <hr/></td></tr>
+            <tr><td><strong> Checked By </strong> </td></tr>
+            <tr><td><strong>{{doctorName}}</strong></td></tr>
+</tbody>
+        
+</table>
+    
+        
+
+</body>
+
+</html>

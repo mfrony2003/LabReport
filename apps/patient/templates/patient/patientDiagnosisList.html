@@ -1,0 +1,100 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+<div class="content-wrapper" style="min-height: 1604.8px;">
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <!-- <h1>Project Add</h1> -->
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"></li> -->
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-1">
+                
+            </div>
+            <div class="col-md-10">
+                <a id="btnBack" class="btn btn-success mb-2" href="{% url 'patientSearch' %}">Go to Patient List</a>
+               
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{patientName}} - {{diagnosisName}}</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body table-responsive p-0">
+                            <table id="myTable" class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Report ID</th>
+                                        <th>Diagnosis Name</th>                                        
+                                        <th>Total Price</th>                                        
+                                        <th>Print Bill</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% block patientReport %}
+
+                                    {% for ReportId, item_list in patientDiagnosis.items  %}
+                                    <tr>
+                                        <th>{{ReportId}}</th>
+                                        <td></td>
+                                        <td><strong>{{total}}</strong></td>
+                                        
+                                        <td><a href="{% url 'printBillByReport' ReportId   %}">Click to Print Bill
+                                            </a></td>
+                                    </tr>
+                                    {% for reportName in item_list %}                                        
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ reportName.name }} </td>
+                                        <td>{{ reportName.price }} </td>
+                                        
+                                        {% endfor %}                                        
+                                       
+
+
+                                    </tr>
+                                  
+
+                                    {% endfor %}
+
+                                    {% endblock %}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+              
+            </div>
+            <div class="col-md-1">
+
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,102 @@
+<head>
+    <style>
+       table, th, td {
+    border: 1.5px  ;   
+       }
+       img {
+        float: right;
+}
+    </style>
+</head>
+
+
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    
+ <div>
+    <div>
+    <h2>Company Name</h2>
+</div>
+<div>
+    <h2>{{patientName}}</h2>
+    <p>In this example, the Bill is generated With Barcode  </p>
+
+    <p>    <img src="{{barcode}}"></p>
+        
+</div>
+</div>
+ 
+ 
+
+    <!-- HTML Content -->
+    <table  style="width:100%">>
+        <thead>
+            <tr>
+                <th>Report ID</th>
+                <th>Diagnosis Name</th>
+                <th>Price</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% block patientReport %}
+
+            {% for ReportId, item_list in patientDiagnosis.items  %}
+            <tr>
+                <th>{{ReportId}}</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+                
+
+            </tr>
+            {% for reportName in item_list %}
+            <tr>
+                <td></td>
+                
+                                
+                <td>{{ reportName.name }} </td>
+                
+                <td>{{ reportName.price }} </td>
+                {% endfor %}
+
+
+
+            </tr>
+
+            {% endfor %}
+
+            {% endblock %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <hr>
+
+                    <p><strong>Total: {{total}}</strong></p>
+                </td>
+                <td>
+                    
+                    
+                
+                  
+                   
+                    </td>
+
+            <tr>
+                <td>
+                
+            </td>
+            </tr>
+      
+            </tr>
+           
+        </tbody>
+        
+    </table>
+
+
+</body>
+
+</html>

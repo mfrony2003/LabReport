@@ -1,0 +1,126 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="content-wrapper" style="min-height: 1604.8px;">
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <!-- <h1>Project Add</h1> -->
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"></li> -->
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-1">
+
+
+            </div>
+            <div class="col-md-10">
+                {% csrf_token %}
+                <div class="card card-primary">
+                    
+                        <div class="card-header">
+                            <label class="form-label" for="btnAdd">
+                                <h3>Report List </h3>
+                            </label>
+                           
+    
+                            <div class="card-tools">
+    
+                                <div class="input-group input-group-sm" style="width: 350px;">
+                                    <label class="form-label" for="myInput">Search</label>
+                                    <input type="text" style="width: 850px;" id="myInput" onkeyup="myFunction()"
+                                        placeholder="Search for IDs.">
+    
+    
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="card-body">
+                        <div class="card-body table-responsive p-0">
+                            <table id="myTable" class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Report ID</th>
+                                        <th>Diagnosis Name</th>                                        
+                                        <th>Specimen Needed</th>                                        
+                                        <th>Collect Specimen</th> 
+                                            
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% block patientReport %}
+
+                                    {% for ReportId, item_list in diagnosisList.items  %}
+                                    <tr>
+                                        <td>{{ReportId}}</td>
+                                        <td></td>                                        
+                                        
+                                        <td></td>
+                                        
+                                    </tr>
+                                    {% for report in item_list %}                                        
+                                    <tr>
+                                        <td ><div class="d-none">{{ReportId}}</div> </td>
+                                        <td>{{ report.name }} </td>
+                                        <td>{{ report.specimen }} </td>                                        
+                                        {% if report.myPatientSpecimen_id is None  %}
+                                        <td>
+                                            <button type="button" data-reportId="{{ReportId}}"  data-url='{% url "saveSpecimen" %}', data-diagnosis="{{report.Diagnosis_id}}"
+                                            data-specimen="{{report.specimen_id}}"
+                                                class="btn btn-primary likebutton"                                             >
+                                                <i class="fas fa-plus"></i>
+                                            </button> 
+                                            <button type="button" class="btn btn-outline-success" style="display: none">Done</button>
+                                        </td>
+                                        {% else %}
+                                        <td>
+                                           <strong><span>Sample Id </span> <span id="spnmyPatientSpecimen">  {{report.myPatientSpecimen_id}}</span></strong>
+                                        </td>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    {% endfor %}
+                                    {% endblock %}
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-1">
+
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+
+
+{% endblock %}
+
+{% block script %}
+<script src="/static/js/pathologiDashboard.js"></script>    
+
+   
+ 
+
+{% endblock %}
