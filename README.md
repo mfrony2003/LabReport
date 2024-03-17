@@ -82,6 +82,13 @@ Add patient and add new diafonosis. View existing reports.
 ![patient](https://github.com/mfrony2003/LabReport/assets/26355258/1946b334-da53-4ffc-9ac8-3755d89881f0)
 ](url)
 
+![MakePay](https://github.com/mfrony2003/LabReport/assets/26355258/633d2395-91c2-46e8-b1db-e83aeca1f208)
+
+
+![bill](https://github.com/mfrony2003/LabReport/assets/26355258/f33950b6-7a49-41b6-8785-1c3132afc708)
+
+
+
 # Step 2
 
 Login as pathologist user (pathologist1@test.com). and Collect Specimen 
@@ -97,24 +104,25 @@ Login as a doctor user (doctor1@test.com).you will get the info for whom its ass
 ![doctor](https://github.com/mfrony2003/LabReport/assets/26355258/478937f1-cdd5-4972-97e0-6ea6b3229f28)
 ](url)
 
-Save
+Populate the data and click Save
 
 [
-![report](https://github.com/mfrony2003/LabReport/assets/26355258/ace1cfc7-14c7-45d4-af6f-88dd383daf04)
+![patholgist](https://github.com/mfrony2003/LabReport/assets/26355258/41f58f9a-31a0-42ea-bb7f-756275491a00)
+](url)
+
+Click Print
+
+[
+![doctorView](https://github.com/mfrony2003/LabReport/assets/26355258/7e8131c2-dd10-45e1-869d-559898453e32)
+](url)
+
+### Report generate
+
+The doctor can generate the report by clicking on "Print" button after filling all the required details. This will generate the PDF report and send
+[
+![printreport](https://github.com/mfrony2003/LabReport/assets/26355258/a2bc8b0f-15eb-4335-8304-f7a3ad471ad9)
 ](url)
 
 
-
-## DB Info
- url : http://localhost:8000/admin
- user :faisal
- pwd:test@123
- 
- ## Change the Static text copy the below url to the browser
-   http://localhost:8000/rosetta
-
-![dynamic_text](https://github.com/mfrony2003/djangoMultilingual/assets/26355258/165adea5-5f06-489a-9aad-3f2bdd9ff49f)
-   
-![static_text](https://github.com/mfrony2003/djangoMultilingual/assets/26355258/3cf8e36c-8b34-4e9d-a65e-5664b119a073)
    
 
