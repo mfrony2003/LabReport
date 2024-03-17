@@ -32,6 +32,28 @@ INSERT INTO diagnosis_diagnosiscategory (created_at,updated_at,is_active,name,de
 	 ('2024-03-05 07:05:09.701086','2024-03-05 07:31:54.615019',1,'Radiology & Imaging','Radiology & Imaging',1,1),
 	 ('2024-03-05 07:05:34.008373','2024-03-05 07:31:24.871047',1,'Pathology','Pathology',1,1);
 
+INSERT INTO diagnosis_diagnosisparameters (created_at,updated_at,is_active,investigationName,Unit,Reverence_Range,created_by_id,diagnosisName_id,updated_by_id) VALUES
+	 ('2024-03-05 10:10:29.323194','2024-03-05 10:10:29.323194',1,'Hematocrit','g/dL','Male: 38.3% to 48.6% Female: 35.5% to 44.9%',1,1,1),
+	 ('2024-03-05 10:11:18.400958','2024-03-05 14:20:02.382224',1,'Total Count','k/ul','4.0-10.0',1,1,1),
+	 ('2024-03-05 10:12:08.079825','2024-03-05 14:19:38.003548',1,'Total WBC Count','k/ul','3.4 to 9.6 billion cells/L',1,1,1),
+	 ('2024-03-05 10:12:31.799803','2024-03-05 14:18:52.078519',1,'Platelet count','k/ul','150-410',1,1,1),
+	 ('2024-03-05 10:17:56.372286','2024-03-05 10:17:56.372286',1,'Alanine transaminase (ALT)','U/L','Male: UP TO 50 Female : Up to 35',1,14,1),
+	 ('2024-03-05 10:18:49.839937','2024-03-05 10:18:49.839937',1,'Aspartate transaminase (AST)','U/L','UP TO 37',1,14,1),
+	 ('2024-03-05 10:19:29.241712','2024-03-05 10:19:29.241712',1,'alkaline phosphatase (ALP)','U/L','38-128',1,14,1),
+	 ('2024-03-10 02:20:10.411292','2024-03-10 02:20:10.411292',1,'ESR','mm/hr.','Men under 50 years old: less than 15 mm/hr. Men over 50 years less 20 mm/hr.    Women under 50 years old: less than 20 mm/hr. Women over 50 years old: less than 30 mm/hr.',1,2,1),
+	 ('2024-03-10 02:24:41.137955','2024-03-10 02:24:41.137955',1,'Color','','colorless ,dark yellow, Pale yellow or amber (May be stained by certain foods)',1,8,1),
+	 ('2024-03-10 02:25:34.697473','2024-03-10 02:25:34.697473',1,'pH','','4.5-8',1,8,1),
+	 ('2024-03-10 02:26:14.868395','2024-03-10 02:26:14.868395',1,'Glucose: at or below','mg/dL.','130 mg/dL.',1,8,1),
+	 ('2024-03-16 14:57:47.947893','2024-03-16 14:57:47.947893',1,'IGM','','',1,5,1),
+	 ('2024-03-16 14:58:09.245568','2024-03-16 14:58:09.245568',1,'IgG','','',1,5,1),
+	 ('2024-03-16 14:59:02.049596','2024-03-16 14:59:02.049596',1,'TO','','1.8',1,6,1),
+	 ('2024-03-16 14:59:20.225870','2024-03-16 14:59:20.225870',1,'TH','','1.8',1,6,1),
+	 ('2024-03-16 14:59:46.407349','2024-03-16 14:59:46.407349',1,'AH','','1.8',1,6,1),
+	 ('2024-03-16 14:59:59.708622','2024-03-16 14:59:59.708622',1,'BH','','1.8',1,6,1),
+	 ('2024-03-16 15:01:34.855026','2024-03-16 15:01:34.855026',1,'Culture & Sensivity Report','','',1,7,1),
+	 ('2024-03-17 03:15:42.330873','2024-03-17 03:15:42.330873',1,'Radiology','','',1,9,1),
+	 ('2024-03-17 03:16:24.850268','2024-03-17 03:16:24.850268',1,'Radiology','','',1,10,1);
+
 INSERT INTO diagnosis_diagnosis (created_at,updated_at,is_active,name,description,created_by_id,updated_by_id,category_id,price,specimen_id) VALUES
 	 ('2024-03-05 07:34:50.227402','2024-03-12 02:43:34.867054',1,'CBC','Complete blood count',1,1,4,400,1),
 	 ('2024-03-05 07:35:20.874545','2024-03-12 02:43:30.892944',1,'ESR','Erythrocyte Sedimentation Rate',1,1,4,300,1),
