@@ -4,10 +4,12 @@
 ```mermaid
 sequenceDiagram
  autonumber
-  participant Patient
-  participant Lab-Staff
-  participant Pathologiest
-  participant Doctor
+  participant   Patient
+  box Another
+  participant   Lab-Staff
+  participant   Pathologiest
+  participant   Doctor
+  end
   Patient->>Lab-Staff: I need to do some diagnosis
 
   Lab-Staff->>Patient: Ok,Let me collect your diagnosis list s , pay the bill and a pathologist will collect sample to the lab
