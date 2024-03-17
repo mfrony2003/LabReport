@@ -6,11 +6,11 @@ INSERT INTO userauth_role (name,description,is_active) VALUES
 	 ('Patient','Patient',1);
 
 INSERT INTO userauth_user (password,email,name,phone,is_active,is_superuser,is_staff,date_joined,last_login,role_id) VALUES
-	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','nazmul@test.com','Nazmul','012345678',1,0,1,'2024-03-09 06:18:41','2024-03-17 03:30:55.401433',3),
-	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','kamrul@test.com','Kamrul','0158456',1,1,1,'2024-03-09 06:20:14','2024-03-17 06:22:01.338341',3),
-	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','islam@test.com','Islam','01985236477',1,0,0,'2024-03-09 11:11:54',NULL,3),
-	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','ashraf@test.com','Ash Raf','01254788',1,0,1,'2024-03-12 02:48:25','2024-03-17 05:58:41.427002',4),
-	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','zahid@test.com','Zahid','01985233',1,0,0,'2024-03-12 02:49:40','2024-03-12 10:00:16.654228',4),
+	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','doctor1@test.com','Nazmul','012345678',1,0,1,'2024-03-09 06:18:41','2024-03-17 03:30:55.401433',3),
+	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','doctor2@test.com','Kamrul','0158456',1,1,1,'2024-03-09 06:20:14','2024-03-17 06:22:01.338341',3),
+	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','doctor3@test.com','Islam','01985236477',1,0,0,'2024-03-09 11:11:54',NULL,3),
+	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','pathologist1@test.com','Ash Raf','01254788',1,0,1,'2024-03-12 02:48:25','2024-03-17 05:58:41.427002',4),
+	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','pathologist2@test.com','Zahid','01985233',1,0,0,'2024-03-12 02:49:40','2024-03-12 10:00:16.654228',4),
 	 ('pbkdf2_sha256$720000$bbs5dptm5Zc7rrGtzcJG2q$JNl0inn1Y8JHdRC0QD6t81qkQmYqomeqvucYXP7CXog=','staff@test.com','Staff','01478522369',1,0,0,'2024-03-15 09:26:42','2024-03-17 06:23:18.104153',2);
 
 
@@ -70,8 +70,8 @@ INSERT INTO doctors_doctorspecialization (created_at,updated_at,is_active,name,d
 	 ('2024-03-09 06:17:23.118462','2024-03-09 06:17:23.118462',1,'Pathologist','Pathologist',1,1);
 
 INSERT INTO doctors_doctor (created_at,updated_at,is_active,firstname,lastname,age,picture,address,city,state,zip,mobile,created_by_id,updated_by_id,user_id,specialization_id,diagnosisCategory_id) VALUES
-	 ('2024-03-09 06:20:07.790369','2024-03-09 06:20:07.790369',1,'Nazmul','Islam',55,'','27 Bonogram','Dhaka','Dhaka','1200','012121212',1,1,2,2,3),
-	 ('2024-03-09 06:21:16.441972','2024-03-09 06:21:16.441972',1,'Kamrul','Islam',52,'','12 Link Road','Dhaka','Dhaka','1300','012121210',1,1,3,1,4);
+	 ('2024-03-09 06:20:07.790369','2024-03-09 06:20:07.790369',1,'Nazmul','Islam',55,'','27 Bonogram','Dhaka','Dhaka','1200','012121212',1,1,2,2,1),
+	 ('2024-03-09 06:21:16.441972','2024-03-09 06:21:16.441972',1,'Kamrul','Islam',52,'','12 Link Road','Dhaka','Dhaka','1300','012121210',1,1,3,1,2);
 
 
 
