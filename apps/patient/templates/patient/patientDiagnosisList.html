@@ -55,7 +55,7 @@
                                     <tr>
                                         <th>{{ReportId}}</th>
                                         <td></td>
-                                        <td><strong>{{total}}</strong></td>
+                                        <td><strong> </strong></td>
                                         
                                         <td><a href="{% url 'printBillByReport' ReportId   %}">Click to Print Bill
                                             </a></td>
@@ -65,6 +65,8 @@
                                         <td></td>
                                         <td>{{ reportName.name }} </td>
                                         <td>{{ reportName.price }} </td>
+                                        
+                                        
                                         
                                         {% endfor %}                                        
                                        
