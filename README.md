@@ -71,10 +71,13 @@ execute the inserctStatement.sql -- it will populate the data pre loaded data
 ```
 ## Use Docker to run the preoject
  Run the below commands 
-
+ 
+```bash
  docker-compose build
+
  docker-compose run
 
+```
 open the link on browser
 
 http://localhost:8000
