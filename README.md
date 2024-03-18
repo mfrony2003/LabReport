@@ -1,4 +1,4 @@
-# Lab Report sample application
+# Pathology Lab Management System (PLMS) (Version 1.0)
 
 ## Sequence Diagram
 ```mermaid
@@ -33,7 +33,7 @@ Note right of Doctor: As soon as doctor finish a lik send to patient mobile to v
 
 ```
 
-## How to install
+## How to Run
    
 ```bash
 mkdir my_project
@@ -48,7 +48,9 @@ venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
 RUN
+
 ```bash
+
 python manage.py migrate
 python manage.py createsuperuser
 execute the inserctStatement.sql -- it will populate the data pre loaded data
@@ -64,10 +66,19 @@ execute the inserctStatement.sql -- it will populate the data pre loaded data
 | pathologist2@test.com  | 123456   | pathologist 
 
 
-$ python manage.py runserver
+
 
 ```
+## Use Docker to run the preoject
+ Run the below commands 
+
+ docker-compose build
+ docker-compose run
+
+open the link on browser
+
 http://localhost:8000
+
 
 # Step 1
 
