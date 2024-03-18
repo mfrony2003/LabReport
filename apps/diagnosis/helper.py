@@ -1,6 +1,6 @@
 
 
-def getTotalPrice(objpatientDiagnosis):
+def getPatientDiagnosis(objpatientDiagnosis):
     # do code using username and slug for data1 and data2 here 
    diagnosisList = {}   
    total=0

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from apps.patient.models import PatientDiagnosis
-from apps.diagnosis.helper import getTotalPrice
+from apps.diagnosis.helper import getPatientDiagnosis
 from apps.doctors.models import  Doctor, DoctorReports
 
 
@@ -19,7 +19,7 @@ def doctordashboard(request):
       for doctorReport in doctorReports:
        objPatientDiagnosis=PatientDiagnosis.objects.filter(myPatientReport_id=doctorReport.myPatientReport_id)
       
-       diagnosisList, total ,patientName = getTotalPrice(objPatientDiagnosis)      
+       diagnosisList, total ,patientName = getPatientDiagnosis(objPatientDiagnosis)      
          
        alldiagnosis.update(diagnosisList)
       

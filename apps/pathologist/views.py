@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from apps.diagnosis.models import Specimen
 from apps.patient.models import MyPatientSpecimen, PatientDiagnosis
-from apps.diagnosis.helper import getTotalPrice
+from apps.diagnosis.helper import getPatientDiagnosis
 
 
 
@@ -14,7 +14,7 @@ def pathologistdashboard(request):
      objPatientDiagnosis=PatientDiagnosis.objects.all()
      diagnosisList = {}
      total=0
-     diagnosisList, total ,patientName = getTotalPrice(objPatientDiagnosis)
+     diagnosisList, total ,patientName = getPatientDiagnosis(objPatientDiagnosis)
      specimen = Specimen.objects.all()
      
      context = {                      

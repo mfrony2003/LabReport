@@ -4,7 +4,7 @@ from django.shortcuts import render
 import base64
 from apps.doctors.models import DoctorReports
 from apps.reports.helper import createBarCodes, image_as_base64
-from apps.diagnosis.helper import getTotalPrice
+from apps.diagnosis.helper import getPatientDiagnosis
 
 # Create your views here.
 from apps.patient.models import PatientDiagnosis, PatientReportDetails
@@ -68,7 +68,7 @@ def printBillByReport(request,reportId):
    patientDiagnosis = PatientDiagnosis.objects.filter(myPatientReport_id=reportId)
    diagnosisList = {}   
    total=0
-   diagnosisList, total ,patientName = getTotalPrice(patientDiagnosis)      
+   diagnosisList, total ,patientName = getPatientDiagnosis(patientDiagnosis)      
    encoded_string=base64.b64encode(createBarCodes(reportId))
    barcode= "data:image/jpeg;base64," + encoded_string.decode('utf-8')
 

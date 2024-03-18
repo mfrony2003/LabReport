@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from apps.doctors.helper import getMyDoctorByDiagnosisCategory
 from apps.doctors.models import DoctorReports,Doctor
-from apps.diagnosis.helper import getTotalPrice
+from apps.diagnosis.helper import getPatientDiagnosis
 
 from apps.diagnosis.models import Diagnosis, DiagnosisParameters
 
@@ -126,7 +126,7 @@ def MypatientDiagnosisList(request,patientId):
           patientName= Patient.objects.filter(id=patientId).first()     
           diagnosisList = {}
           total=0
-          diagnosisList, total ,patientName = getTotalPrice(patientDiagnosis)
+          diagnosisList, total ,patientName = getPatientDiagnosis(patientDiagnosis)
           context = {              
               'patientName': patientName, 
               'total':total
