@@ -3,10 +3,19 @@
 import os
 import sys
 
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+
+dotenv_path = join(dirname(__file__), 'Pathology','Settings','.env')
+load_dotenv(dotenv_path)
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Pathology.settings')
+    if os.environ.get("DEBUG")=="True":
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Pathology.Settings.localSettings')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Pathology.Settings.prodSettings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

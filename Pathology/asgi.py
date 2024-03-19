@@ -11,6 +11,15 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Pathology.settings')
+
+
+if os.environ.get("DEBUG")=="True":
+      os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.Settings.localSettings')
+else:
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.Settings.prodSettings')
+
+
+
+
 
 application = get_asgi_application()

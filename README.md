@@ -71,7 +71,7 @@ execute the inserctStatement.sql -- it will populate the data pre loaded data
 ```
 ## Use Docker to run the preoject
  Run the below commands 
- 
+
 ```bash
  docker-compose build
 
@@ -90,7 +90,7 @@ Login as a staff user (staff@test.com).
 
 ![Login](https://github.com/mfrony2003/LabReport/assets/26355258/46dde89f-c025-4f95-9ec8-23eddec7021a)
 
-Add patient and add new diafonosis. View existing reports.
+Add patient and add new diagnosis. View existing reports.
 
 [
 ![patient](https://github.com/mfrony2003/LabReport/assets/26355258/1946b334-da53-4ffc-9ac8-3755d89881f0)
