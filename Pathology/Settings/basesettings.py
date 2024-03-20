@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG")=="True"
 
 
 
@@ -128,14 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-if not DEBUG:
-    STATIC_ROOT=''
+MEDIA_URL='/media/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
-]
+if  DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'prodStatic')]
+else:
+    STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+
 #MEDIA_URL = '/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'apps/userauth/static/images/')
+MEDIA_ROOT=[os.path.join(BASE_DIR, 'media')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

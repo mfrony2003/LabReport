@@ -10,7 +10,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 ALLOWED_HOSTS = ['*']
 
-
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get("PROD_DATABASES_ENGINE"),
